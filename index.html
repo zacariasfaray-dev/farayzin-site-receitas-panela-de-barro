@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panela de Barro — Receitas caseiras de verdade</title>
+<meta name="description" content="Receitas caseiras testadas na marra: moqueca baiana, feijoada completa, pão de queijo mineiro e bolo de chocolate. Passos claros, tempo certo, panela quente.">
+<meta property="og:title" content="Panela de Barro — Receitas caseiras de verdade">
+<meta property="og:description" content="Moqueca, feijoada, pão de queijo e bolo de chocolate — receitas testadas, com tempo, rendimento e passos numerados.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2451e'/%3E%3Cpath d='M14 30h36v8a12 12 0 0 1-12 12H26a12 12 0 0 1-12-12v-8z' fill='%23f6efe3'/%3E%3Cpath d='M10 28h44' stroke='%23f6efe3' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M24 16c-3 4 3 8 0 12M40 16c-3 4 3 8 0 12' stroke='%23f6efe3' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6efe3;
+    --ink:#201812;
+    --accent:#c2451e;
+    --muted:#8b7d6b;
+    --hairline:rgba(32,24,18,.14);
+    --dark:#241a13;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sora',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:60;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)' opacity='0.045'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--accent);color:var(--bg)}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  .eyebrow{
+    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;
+  }
+  .display{font-family:'Fraunces',serif;font-weight:900;line-height:.95;letter-spacing:-.02em}
+
+  /* ---------- header ---------- */
+  header.topo{
+    position:sticky;top:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem clamp(1.2rem,4vw,3rem);
+    background:rgba(246,239,227,.88);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .marca{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .marca .astro{color:var(--accent);font-size:1.4rem;line-height:0}
+  .marca strong{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+  nav.linknavo{display:flex;gap:1.6rem}
+  nav.linknavo a{
+    text-decoration:none;font-size:.85rem;color:var(--muted);font-weight:600;
+    transition:color .15s;
+  }
+  nav.linknavo a:hover{color:var(--accent)}
+  @media(max-width:640px){nav.linknavo{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:92vh;display:grid;align-items:end;overflow:hidden}
+  .hero .foto{
+    position:absolute;inset:0;
+    background:url("assets/img/moqueca.jpg") center/cover no-repeat;
+    transform:translate3d(0,0,0);
+  }
+  .hero .scrim{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,12,8,.20) 0%,rgba(20,12,8,.62) 68%,rgba(20,12,8,.86) 100%);
+  }
+  .hero .conteudo{
+    position:relative;z-index:2;padding:0 clamp(1.2rem,5vw,4rem) clamp(2.5rem,6vw,5rem);
+    color:var(--bg);max-width:1200px;
+  }
+  .hero .eyebrow{color:#ffb28e}
+  .hero h1{
+    font-size:clamp(3.2rem,10vw,8.5rem);
+    margin:.5rem 0 1.2rem;
+  }
+  .hero h1 em{font-style:italic;font-weight:500;color:#ffb28e}
+  .hero p.cabe{
+    max-width:56ch;font-size:1.05rem;color:rgba(246,239,227,.86);
+  }
+  .hero .meta{
+    display:flex;gap:2.2rem;margin-top:2.2rem;flex-wrap:wrap;
+  }
+  .hero .meta div{border-left:2px solid var(--accent);padding-left:.9rem}
+  .hero .meta strong{font-family:'Fraunces',serif;font-size:1.9rem;display:block;line-height:1}
+  .hero .meta span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,239,227,.7)}
+
+  /* ---------- seções ---------- */
+  section{padding:clamp(3.5rem,8vw,7rem) clamp(1.2rem,5vw,4rem)}
+  .cabecalho-secao{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:2.6rem;flex-wrap:wrap}
+  .cabecalho-secao h2{font-size:clamp(2rem,5vw,3.6rem)}
+  .cabecalho-secao .astro{color:var(--accent);font-size:clamp(1.6rem,3vw,2.4rem)}
+  .cabecalho-secao p{color:var(--muted);max-width:34ch;font-size:.92rem}
+
+  /* receitas: glo assimesétrico */
+  .glo{display:grid;grid-template-columns:7fr 5fr;gap:clamp(1.2rem,3vw,2.4rem)}
+  @media(max-width:860px){.glo{grid-template-columns:1fr}}
+  article.receita{
+    background:#fbf7ee;border:1px solid var(--hairline);border-radius:14px;
+    overflow:hidden;display:flex;flex-direction:column;cursor:pointer;
+    transition:transform .15s,border-color .15s;
+  }
+  article.receita:hover{transform:translateY(-2px);border-color:var(--accent)}
+  article.receita:active{transform:scale(.98)}
+  article.receita .pla{
+    width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:
+    linear-gradient(120deg,#e3c9a8,#c2451e33);
+  }
+  article.receita .dentro{padding:1.4rem 1.5rem 1.6rem}
+  article.receita h3{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:700;letter-spacing:-.015em;margin:.4rem 0 .5rem}
+  article.receita .desc{color:var(--muted);font-size:.92rem;max-width:52ch}
+  article.receita .metricas{
+    display:flex;gap:1.1rem;margin-top:1.1rem;font-size:.76rem;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:600;
+    flex-wrap:wrap;
+  }
+  article.receita .metricas i{color:var(--accent);font-style:normal}
+  article.receita.grande{grid-row:span 2}
+  article.receita.grande .pla{aspect-ratio:1/1.05}
+
+  .detalhe{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.7,.2,1)}
+  article.receita.aberta .detalhe{max-height:520px}
+  .detalhe>*{padding:0 1.5rem}
+  .detalhe .tit{margin:1.2rem 0 .5rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .detalhe ol{padding-left:1.3rem;font-size:.9rem;color:#3d3226;display:grid;gap:.35rem}
+  .detalhe li::marker{color:var(--accent);font-weight:600}
+
+  /* lista da semana */
+  .semana ol{list-style:none;counter-reset:p}
+  .semana li{
+    counter-increment:p;display:grid;grid-template-columns:auto 1fr auto auto;
+    align-items:baseline;gap:1.4rem;
+    padding:1.5rem 0;border-bottom:1px solid var(--hairline);
+    transition:padding .15s;
+  }
+  .semana li:hover{padding-left:.8rem}
+  .semana li::before{
+    content:counter(p,decimal-leading-zero);
+    font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;
+    color:var(--accent);line-height:1;min-width:2.4ch;
+  }
+  .semana li a{text-decoration:none;font-family:'Fraunces',serif;font-size:clamp(1.15rem,2.4vw,1.7rem);font-weight:700;letter-spacing:-.01em}
+  .semana li a:hover{color:var(--accent)}
+  .semana li .cat{color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .semana li .tpo{font-size:.82rem;color:var(--muted);white-space:nowrap}
+  @media(max-width:640px){.semana li{grid-template-columns:auto 1fr;row-gap:.2rem}.semana li .cat,.semana li .tpo{grid-column:2}}
+
+  /* sobre */
+  .sobre{display:grid;grid-template-columns:2fr 10fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+  @media(max-width:860px){.sobre{grid-template-columns:1fr}}
+  .sobre img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block;background:linear-gradient(140deg,#d9c4a4,#8b7d6b)}
+  .sobre .coluna h2{font-size:clamp(2rem,5vw,3.4rem);margin:.5rem 0 1.2rem}
+  .sobre .coluna p{max-width:60ch;color:#3d3226;font-size:1.02rem}
+  .sobre .coluna p+p{margin-top:1rem}
+
+  /* categorias */
+  .chips{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+  .chips span{
+    border:1px solid var(--hairline);border-radius:999px;padding:.5rem 1.1rem;
+    font-size:.8rem;font-weight:600;color:var(--ink);background:#fbf7ee;
+    transition:all .15s;cursor:default;
+  }
+  .chips span:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+
+  /* rodapé */
+  footer{
+    background:var(--dark);color:rgba(246,239,227,.78);
+    padding:clamp(3rem,7vw,5.5rem) clamp(1.2rem,5vw,4rem) 2.5rem;
+  }
+  .giro{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem}
+  @media(max-width:760px){.giro{grid-template-columns:1fr}}
+  footer .gwata .display{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--bg)}
+  footer .gwata .astro{color:var(--accent)}
+  footer h4{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#ffb28e;margin-bottom:1rem}
+  footer ul{list-style:none;display:grid;gap:.55rem;font-size:.92rem}
+  footer a{text-decoration:none;color:rgba(246,239,227,.78);transition:color .15s}
+  footer a:hover{color:#ffb28e}
+  .base{
+    margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(246,239,227,.12);
+    display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+    font-size:.8rem;color:rgba(246,239,227,.5);
+  }
+  .zap{
+    display:inline-block;margin-top:1.2rem;background:var(--accent);color:var(--bg);
+    text-decoration:none;font-weight:600;font-size:.85rem;
+    padding:.7rem 1.3rem;border-radius:999px;transition:transform .15s;
+  }
+  .zap:hover{transform:translateY(-2px)}
+
+  /* revelação no scroll */
+  .revela{opacity:0;transform:translateY(24px)}
+  .revela.onVista{opacity:1;transform:translateY(0);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .revela{opacity:1;transform:none;transition:none}
+    article.receita,.chips span,footer a,.zap{transition:none}
+    .detalhe{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <a class="marca" href="#topo">
+    <span class="astro">*</span>
+    <strong>Panela de Barro</strong>
+  </a>
+  <nav class="linknavo" aria-label="Navegação principal">
+    <a href="#receitas">Receitas</a>
+    <a href="#semana">Da semana</a>
+    <a href="#cozinha">A cozinha</a>
+  </nav>
+</header>
+
+<main id="topo">
+
+  <section class="hero" aria-label="Abertura">
+    <div class="foto" role="presentation"></div>
+    <div class="scrim" role="presentation"></div>
+    <div class="conteudo">
+      <p class="eyebrow">Receitas testadas na marra</p>
+      <h1 class="display">Comida de casa<br>que <em>respeita</em> a fome</h1>
+      <p class="cabe">Cada receita aqui foi feita duas vezes antes de entrar na página: uma pra acertar o ponto, outra pra conferir o tempo. Nada de receita bonita no site e torta na panela.</p>
+      <div class="meta">
+        <div><strong>48</strong><span>receitas testadas</span></div>
+        <div><strong>2×</strong><span>todo ensaio na cozinha</span></div>
+        <div><strong>25 min</strong><span>refeição mais rápida</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="receitas">
+    <div class="cabecalho-secao revela">
+      <h2 class="display">Da panela direto pra mesa</h2>
+      <span class="astro" aria-hidden="true">*</span>
+      <p>Três pratos de peso e um docinho de encerramento. Toca na receita pra ver os passos.</p>
+    </div>
+    <div class="glo">
+
+      <article class="receita grande revela" onclick="mudarReceita(this)" tabindex="0" onkeydown="if(event.key==='Enter')mudarReceita(this)">
+        <img class="pla" src="assets/img/moqueca.jpg" alt="Moqueca baiana servida na panela de barro" width="1400" height="1050">
+        <div class="dentro">
+          <p class="eyebrow">Peixe · Bahia</p>
+          <h3>Moqueca baiana de vez</h3>
+          <p class="desc">Peixe branco temperado no limão, leite de coco de verdade e dendê no ponto — pimentões que não viram magma. O segredo é não mexer: deixar a panela trabalhar.</p>
+          <div class="metricas"><span><i>45 min</i></span><span>4 porções</span><span>Média</span></div>
+        </div>
+        <div class="detalhe">
+          <p class="tit">Passos</p>
+          <ol>
+            <li>Tempere o peixe com limão, sal e pimenta-do-reino por 20 minutos.</li>
+            <li>Faça uma camada de cebola, tomate, pimentão vermelho e coentro no fundo da panela.</li>
+            <li>Coloque o peixe por cima, cubra com leite de coco e um fio de dendê.</li>
+            <li>Tampe e mantenha em fogo baixo por 25 minutos — o peixe não deve desmanchar.</li>
+            <li>Sirva na própria panela com arroz branco e pirão.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="receita revela" onclick="mudarReceita(this)" tabindex="0" onkeydown="if(event.key==='Enter')mudarReceita(this)">
+        <img class="pla" src="assets/img/paoqueijo.jpg" alt="Pão de queijo mineiro fresquinho" width="1400" height="1050" loading="lazy">
+        <div class="dentro">
+          <p class="eyebrow">Forno · Minas Gerais</p>
+          <h3>Pão de queijo de cumbuca</h3>
+          <p class="desc">Polvilho azedo, queijo minas curado e leite quente. Massa liquidificador — nada de sovar.</p>
+          <div class="metricas"><span><i>30 min</i></span><span>20 unidades</span><span>Fácil</span></div>
+        </div>
+        <div class="detalhe">
+          <p class="tit">Passos</p>
+          <ol>
+            <li>Ferva 250 ml de leite com meio copo de óleo e uma colher de sal.</li>
+            <li>Bata o líquido quente com 1 ovo, 500 g de polvilho azedo e 250 g de queijo ralado.</li>
+            <li>Coloque em forminhas e leve ao forno a 200 °C por 22 minutos.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="receita revela" onclick="mudarReceita(this)" tabindex="0" onkeydown="if(event.key==='Enter')mudarReceita(this)">
+        <img class="pla" src="assets/img/bolo.jpg" alt="Fatia de bolo de chocolate com cobertura brilhante" width="1400" height="1050" loading="lazy">
+        <div class="dentro">
+          <p class="eyebrow">Doces · Sobremesa</p>
+          <h3>Bolo de chocolate da tarde</h3>
+          <p class="desc">Massa de liquidificador, cobertura que endurece com brilho de espelho. Feito num liquidificador só.</p>
+          <div class="metricas"><span><i>50 min</i></span><span>10 fatias</span><span>Fácil</span></div>
+        </div>
+        <div class="detalhe">
+          <p class="tit">Passos</p>
+          <ol>
+            <li>Bata 3 ovos, 2 copos de leite, 1 copo de óleo e 1 copo de açúcar.</li>
+            <li>Junte 2 copos de farinha, meio copo de cacau e 1 colher grande de fermento.</li>
+            <li>Asse a 180 °C por 40 minutos — o palito sai seco.</li>
+            <li>Cobertura: leite condensado, cacau e manteiga ao fogo baixo até soltar do fundo da panela.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="receita revela" onclick="mudarReceita(this)" tabindex="0" onkeydown="if(event.key==='Enter')mudarReceita(this)">
+        <img class="pla" src="assets/img/feijoada.jpg" alt="Feijoada completa servida em travessa" width="1400" height="1050" loading="lazy">
+        <div class="dentro">
+          <p class="eyebrow">Grande dia · sábado</p>
+          <h3>Feijoada de sábado grande</h3>
+          <p class="desc">Chuva lá fora, panela pesada aqui dentro: carnes dessalgadas de véspera e laranja na hora de servir.</p>
+          <div class="metricas"><span><i>3 h</i></span><span>8 pratos</span><span>Esforço</span></div>
+        </div>
+        <div class="detalhe">
+          <p class="tit">Passos</p>
+          <ol>
+            <li>Dessalgue as carnes salgadas de véspera, trocando a água 3 vezes.</li>
+            <li>Cozinhe as carnes separadas até amaciarem — cada tipo tem seu tempo.</li>
+            <li>Ao feijão preto cozido, junte as carnes e o refogado de alho e cebola.</li>
+            <li>Mantenha semitampado em fogo baixo por 1 hora, mexendo pouco.</li>
+            <li>Sirva com arroz, couve refogada, farofa e laranja cortada fina.</li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="semana" id="semana">
+    <div class="cabecalho-secao revela">
+      <h2 class="display">Da semana</h2>
+      <span class="astro" aria-hidden="true">*</span>
+      <p>O que mais rendeu elogio na mesa, contado pela fila.</p>
+    </div>
+    <ol>
+      <li class="revela">
+        <a href="#receitas">Frango na cerveja com batata rústica</a>
+        <span class="cat">Almoço</span>
+        <span class="tpo">1 h · 4 porções</span>
+      </li>
+      <li class="revela">
+        <a href="#receitas">Escondidinho de carne-seca com purê de mandioca</a>
+        <span class="cat">Jantar</span>
+        <span class="tpo">1 h 15 · 6 pratos</span>
+      </li>
+      <li class="revela">
+        <a href="#receitas">Sopa de legumes com torrada de alho</a>
+        <span class="cat">Leve</span>
+        <span class="tpo">35 min · 4 cumbucas</span>
+      </li>
+      <li class="revela">
+        <a href="#receitas">Tapioca de queijo coalho com coco</a>
+        <span class="cat">Café da manhã</span>
+        <span class="tpo">10 min · 1 unidade</span>
+      </li>
+      <li class="revela">
+        <a href="#receitas">Peixe na folha de bananeira na brasa</a>
+        <span class="cat">Brasa</span>
+        <span class="tpo">50 min · 4 porções</span>
+      </li>
+    </ol>
+    <div class="chips revela" aria-label="Categorias">
+      <span>Peixe & frutos do mar</span><span>Forno</span><span>Brasa</span><span>Doces</span><span>Massas</span><span>Até 30 minutos</span>
+    </div>
+  </section>
+
+  <section class="sobre" id="cozinha">
+    <span class="astro revela" aria-hidden="true" style="color:var(--accent);font-size:clamp(2rem,4vw,3rem)">*</span>
+    <div class="coluna revela">
+      <p class="eyebrow">A cozinha</p>
+      <h2 class="display">Panela autêntica, sem atalho</h2>
+      <p>O painel de barro não pressa. Cada receita daqui passa por duas cozinhas antes de ser publicada — a minha, pra desenhar os passos, e a de alguém que nunca fez o prato, pra provar que as instruções alcançam quem está vendo o fogo pela primeira vez.</p>
+      <p>Tempos medidos com cronômetro, medidas em copo e colher de verdade, e cada "ponto certo" descrito com o que os olhos veem. Se a sua moqueca quebrou no meu passo 4, me conta que eu volto pro fogo.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="giro">
+    <div class="gwata">
+      <p class="eyebrow" style="color:#ffb28e">Panela de Barro</p>
+      <p class="display">O fogo é *seu, <br>a receita é minha.</p>
+      <a class="zap" href="https://wa.me/5511999998888?text=Oi%21%20Quero%20uma%20receita%20do%20Panela%20de%20Barro">Manda teu pedido no WhatsApp</a>
+    </div>
+    <div>
+      <h4>Cozinha</h4>
+      <ul>
+        <li><a href="#receitas">Receitas testadas</a></li>
+        <li><a href="#semana">Da semana</a></li>
+        <li><a href="#cozinha">Nossa cozinha</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Cozinha aberta</h4>
+      <ul>
+        <li>Receitas novas toda semana</li>
+        <li>Feita em casa, provada duas vezes</li>
+        <li>Dúvidas e pedidos pelo WhatsApp</li>
+      </ul>
+    </div>
+  </div>
+  <div class="base">
+    <span>© <span id="ano">2026</span> Panela de Barro — Receitas caseiras.</span>
+    <span>Cozido com paciência e dendê.</span>
+  </div>
+</footer>
+
+<script>
+  function mudarReceita(card){
+    card.classList.toggle('aberta');
+  }
+  const revelar = new IntersectionObserver((entradas)=>{
+    entradas.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('onVista'), i*80);
+        revelar.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.revela').forEach(el=>revelar.observe(el));
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
